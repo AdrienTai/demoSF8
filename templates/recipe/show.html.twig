@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Recette : " ~ slug %}
+
+
+{% block body %}
+    <h1>{{ slug  | upper }}</h1>
+    <p>
+        Description de page de recette. <br/>
+        Description de page. Description de page. Description de page. 
+        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+    </p>
+    <ul>
+        <li>
+            <a href="{{ url('recipe.show', {id: 32, slug: 'pate-bolognaise'}) }}">Pate bolognaise</a>
+        </li>
+    </ul>
+{% endblock %}
