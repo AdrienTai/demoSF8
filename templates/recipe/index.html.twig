@@ -4,5 +4,20 @@
 
 
 {% block body %}
-    Ici vous trouverez toutes les recettes.
+    <p>Ici vous trouverez toutes les recettes.</p>
+
+    
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{{ path('recipe.show', {id: recipe.id, slug: recipe.slug}) }}">{{ recipe.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    {% if totalDuration > 0 %}
+        <p>
+            Plus de {{ totalDuration }} minutes de recettes !!
+        </p>
+    {% endif %}
 {% endblock %}

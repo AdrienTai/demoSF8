@@ -1,22 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title "Recette : " ~ slug %}
+{% block title "Recette : " ~ recipe.title %}
 
 
 {% block body %}
-    <h1>{{ slug  | upper }}</h1>
+    <h1>{{ recipe.title  | upper }}</h1>
     <p>
-        Description de page de recette. <br/>
-        Description de page. Description de page. Description de page. 
-        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
-        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
-        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
-        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
-        Description de page. Description de page. Description de page. Description de page. Description de page. Description de page. 
+        {{ recipe.description | nl2br }}
     </p>
     <ul>
         <li>
-            <a href="{{ url('recipe.show', {id: 32, slug: 'pate-bolognaise'}) }}">Pate bolognaise</a>
+            Durée : {{ recipe.duration }} minutes.
+        </li>
+        <li>
+            Date de création : {{ recipe.createdAt | date }}.
         </li>
     </ul>
 {% endblock %}
