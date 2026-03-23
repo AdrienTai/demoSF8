@@ -2,7 +2,6 @@
 
 {% block title "Recette : " ~ recipe.title %}
 
-
 {% block body %}
     <h1>{{ recipe.title  | upper }}</h1>
     <p>
@@ -14,6 +13,9 @@
         </li>
         <li>
             Date de création : {{ recipe.createdAt | date }}.
+        </li>
+        <li>
+            <a href ="{{ path('recipe.edit', parameters = {'id': recipe.id, 'slug': recipe.slug}) }}">Modifier la recette</a>
         </li>
     </ul>
 {% endblock %}
